@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Feed, Icon } from 'semantic-ui-react'
 
 class Messages extends Component {
 
@@ -10,6 +11,8 @@ class Messages extends Component {
       inMessages: []
     }
 
+    this.avatarSrc = `https://robohash.org/${Math.random()}`
+
     this.props.socket.on('chat message', (msg) => {
       this.setState({ inMessages: [...this.state.inMessages, msg] })
     })
@@ -17,10 +20,34 @@ class Messages extends Component {
 
   currMessages = () => {
     return (
+
+
+
       <div>
         <ul>
           {this.state.inMessages.map((msg, index) => {
-            return <li key={index}>{msg}</li>
+            return (
+              <li key={index}>
+                <Feed>
+                  <Feed.Event>
+                    <Feed.Label>
+                      <img src={this.avatarSrc} />
+                    </Feed.Label>
+                    <Feed.Content>
+                      <Feed.Summary>
+                        {/* user name here */}
+                        <Feed.User>Test user 1</Feed.User>
+                        {/* Put message time here */}
+                        {/* <Feed.Date>1 Hour Ago</Feed.Date> */}
+                      </Feed.Summary>
+                    <Feed.Extra>
+                      {msg}
+                    </Feed.Extra>
+                    </Feed.Content>
+                  </Feed.Event>
+                </Feed>
+              </li>
+            )
           })}
         </ul>
       </div>
