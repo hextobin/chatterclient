@@ -20,9 +20,6 @@ class Messages extends Component {
 
   currMessages = () => {
     return (
-
-
-
       <div>
         <ul>
           {this.state.inMessages.map((msg, index) => {
