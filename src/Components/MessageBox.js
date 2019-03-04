@@ -9,7 +9,7 @@ class MessageBox extends Component {
 
   onMessageSubmit = (e) => {
     e.preventDefault()
-    this.props.socket.emit('chat message', this.state.message)
+    this.props.socket.emit('chat message', this.state.message, this.props.userName)
     this.setState({ message: '' })
   }
 

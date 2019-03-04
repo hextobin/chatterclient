@@ -11,10 +11,10 @@ class Messages extends Component {
       inMessages: []
     }
 
-    this.avatarSrc = `https://robohash.org/${Math.random()}`
-
-    this.props.socket.on('chat message', (msg) => {
-      this.setState({ inMessages: [...this.state.inMessages, msg] })
+    this.props.socket.on('chat message', (message , userName) => {
+      console.log(userName)
+      const newMessageObj = { message, userName }
+      this.setState({ inMessages: [...this.state.inMessages, newMessageObj] })
     })
   }
 
@@ -22,23 +22,22 @@ class Messages extends Component {
     return (
       <div>
         <ul>
-          {this.state.inMessages.map((msg, index) => {
+          {this.state.inMessages.map((msgObj, index) => {
             return (
               <li key={index}>
                 <Feed>
                   <Feed.Event>
                     <Feed.Label>
-                      <img src={this.avatarSrc} alt='robot user avatar'  />
+                      <img src={`https://robohash.org/${msgObj['userName']}`} alt='robot user avatar'  />
                     </Feed.Label>
                     <Feed.Content>
                       <Feed.Summary>
-                        {/* user name here */}
-                        <Feed.User>Test user 1</Feed.User>
+                        <Feed.User>{msgObj['userName']}</Feed.User>
                         {/* Put message time here */}
                         {/* <Feed.Date>1 Hour Ago</Feed.Date> */}
                       </Feed.Summary>
                     <Feed.Extra>
-                      {msg}
+                      {msgObj['message']}
                     </Feed.Extra>
                     </Feed.Content>
                   </Feed.Event>

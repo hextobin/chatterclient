@@ -31,10 +31,10 @@ class App extends Component {
       <div>
         {this.state.userEnabled ? 
         <div hidden></div> : 
-        <UserBox setUserName={(usr) => this.setUserName(usr)}  enableUser={() => this.enableUser()}/>
+        <UserBox setUserName={this.setUserName}  enableUser={this.enableUser}/>
         }
         <Messages socket={this.socket} />
-        <MessageBox userEnabled={this.state.userEnabled} socket={this.socket} />
+        <MessageBox userName={this.state.userName}  userEnabled={this.state.userEnabled} socket={this.socket} />
       </div>
     )
   }
