@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Feed, Icon } from 'semantic-ui-react'
+import { Feed } from 'semantic-ui-react'
 
 class Messages extends Component {
 
@@ -28,7 +28,7 @@ class Messages extends Component {
                 <Feed>
                   <Feed.Event>
                     <Feed.Label>
-                      <img src={this.avatarSrc} />
+                      <img src={this.avatarSrc} alt='robot user avatar'  />
                     </Feed.Label>
                     <Feed.Content>
                       <Feed.Summary>

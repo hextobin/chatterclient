@@ -20,8 +20,8 @@ class MessageBox extends Component {
   render () { 
     return(
       <>
-      <form action="" onSubmit={this.onMessageSubmit}>
-        <Input fluid action={<Button icon='chat' onClick={this.onMessageSubmit} />} onChange={this.onChange} value={this.state.message}  placeholder='Your chatter goes here...' />
+      <form id='messagebox'  action="" onSubmit={this.onMessageSubmit}>
+        <Input disabled={!this.props.userEnabled}  fluid action={<Button icon='chat' onClick={this.onMessageSubmit} />} onChange={this.onChange} value={this.state.message}  placeholder='Your chatter goes here...' />
       </form>
       </>
     )
