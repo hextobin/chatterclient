@@ -15,13 +15,13 @@ class MessageBox extends Component {
 
   onChange = (e) => {
     this.setState({ message: e.target.value})
-  } 
+  }
 
   render () { 
     return(
       <>
       <form action="" onSubmit={this.onMessageSubmit}>
-        <Input fluid action={<Button icon='chat' onClick={(e) => this.onMessageSubmit(e)} />} onChange={this.onChange} value={this.state.message}  placeholder='Your chatter goes here...' />
+        <Input fluid action={<Button icon='chat' onClick={this.onMessageSubmit} />} onChange={this.onChange} value={this.state.message}  placeholder='Your chatter goes here...' />
       </form>
       </>
     )
