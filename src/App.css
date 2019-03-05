@@ -26,3 +26,11 @@ ul {
   height: 100vh;
   background-color: rgb(113, 121, 158);
 }
+
+#user-list-name {
+  font-size: 2vw !important;
+}
+
+.user-list-name-align {
+  text-align: left;
+}

@@ -26,14 +26,16 @@ class App extends Component {
   }
 
   setUserName = (usr) => {
-    this.setState({ userName: usr })
+    this.setState({ userName: usr }, () => {
+      this.socket.emit('join room', this.state.userName)
+    })
   }
 
   render() {
     return (
       <>
         <Grid columns='equal'>
-          <ControlColumn setUserName={this.setUserName} enableUser={this.enableUser} userEnabled={this.state.userEnabled}/>
+          <ControlColumn socket={this.socket} setUserName={this.setUserName} enableUser={this.enableUser} userEnabled={this.state.userEnabled}/>
           <MessageColumn socket={this.socket} userEnabled={this.state.userEnabled} userName={this.state.userName}/>
         </Grid>
       </>
