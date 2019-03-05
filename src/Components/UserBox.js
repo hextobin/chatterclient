@@ -20,11 +20,9 @@ class UserBox extends Component {
   render() {
     return(
       <>
-      <Grid centered>
-      <form  action="" onSubmit={this.onUserSubmit}>
-        <Input id='userbox' size='big' action={<Button icon='address card' onClick={this.onUserSubmit} />} onChange={this.onChange} value={this.state.userName}  placeholder='Username' />
-      </form>
-      </Grid>
+        <form action="" onSubmit={this.onUserSubmit}>
+          <Input id='userbox' size='big' action={<Button icon='address card' onClick={this.onUserSubmit} />} onChange={this.onChange} value={this.state.userName} placeholder='Username' />
+        </form>
       </>
     )
   }

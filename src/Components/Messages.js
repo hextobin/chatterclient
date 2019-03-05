@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Feed } from 'semantic-ui-react'
+import moment from 'moment'
 
 class Messages extends Component {
 
@@ -34,7 +35,7 @@ class Messages extends Component {
                       <Feed.Summary>
                         <Feed.User>{msgObj['userName']}</Feed.User>
                         {/* Put message time here */}
-                        {/* <Feed.Date>1 Hour Ago</Feed.Date> */}
+                        <Feed.Date>{moment().format('h:mm:ss a')}</Feed.Date>
                       </Feed.Summary>
                     <Feed.Extra>
                       {msgObj['message']}

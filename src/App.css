@@ -5,19 +5,15 @@ body {
 .ui.fluid.input {
   /* position: fixed !important; */
   /* bottom: 0; */
-  width: 100%;
+  /* width: 100%; */
   padding: 20px;
 }
 
 #messagebox {
   position: fixed !important;
   bottom: 0;
-  width: 100%;
+  width: 50%;
   /* padding: 0 20px 20px 20px; */
-}
-
-.ui.grid {
- padding-top: 20px;
 }
 
 ul {
@@ -25,10 +21,8 @@ ul {
   width: 70%;
 }
 
-li:nth-child(even) {
-  background-image: linear-gradient(141deg, #9fb8ad 0%, #1fdb74 51%, #2cb5e8 75%);
-}
-
-li:nth-child(odd) {
-  background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2ce8cf 75%);
+.controlcol {
+  border-right: 1px solid black;
+  height: 100vh;
+  background-color: rgb(113, 121, 158);
 }

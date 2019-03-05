@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.min.css'
+import { Container, Grid } from 'semantic-ui-react'
 import '../src/App.css'
 import io from 'socket.io-client'
 import MessageBox from './Components/MessageBox';
 import Messages from './Components/Messages'
 import UserBox from './Components/UserBox';
+import ControlColumn from './Components/ControlColumn'
+import MessageColumn from './Components/MessageColumn'
 
 class App extends Component {
   constructor(props) {
@@ -28,14 +31,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        {this.state.userEnabled ? 
-        <div hidden></div> : 
-        <UserBox setUserName={this.setUserName}  enableUser={this.enableUser}/>
-        }
-        <Messages socket={this.socket} />
-        <MessageBox userName={this.state.userName}  userEnabled={this.state.userEnabled} socket={this.socket} />
-      </div>
+      <>
+        <Grid columns='equal'>
+          <ControlColumn setUserName={this.setUserName} enableUser={this.enableUser} userEnabled={this.state.userEnabled}/>
+          <MessageColumn socket={this.socket} userEnabled={this.state.userEnabled} userName={this.state.userName}/>
+        </Grid>
+      </>
     )
   }
 }
