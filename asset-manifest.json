@@ -1,0 +1,16 @@
+{
+  "main.css": "/chatterclient/static/css/main.188f8f18.chunk.css",
+  "main.js": "/chatterclient/static/js/main.355bae63.chunk.js",
+  "main.js.map": "/chatterclient/static/js/main.355bae63.chunk.js.map",
+  "runtime~main.js": "/chatterclient/static/js/runtime~main.05a35bfe.js",
+  "runtime~main.js.map": "/chatterclient/static/js/runtime~main.05a35bfe.js.map",
+  "static/css/2.63a30ecd.chunk.css": "/chatterclient/static/css/2.63a30ecd.chunk.css",
+  "static/js/2.e059e7f1.chunk.js": "/chatterclient/static/js/2.e059e7f1.chunk.js",
+  "static/js/2.e059e7f1.chunk.js.map": "/chatterclient/static/js/2.e059e7f1.chunk.js.map",
+  "index.html": "/chatterclient/index.html",
+  "precache-manifest.5648c4306590dea289bba44ba506d55b.js": "/chatterclient/precache-manifest.5648c4306590dea289bba44ba506d55b.js",
+  "service-worker.js": "/chatterclient/service-worker.js",
+  "static/css/2.63a30ecd.chunk.css.map": "/chatterclient/static/css/2.63a30ecd.chunk.css.map",
+  "static/css/main.188f8f18.chunk.css.map": "/chatterclient/static/css/main.188f8f18.chunk.css.map",
+  "static/media/semantic.min.css": "/chatterclient/static/media/outline-icons.ef60a4f6.woff"
+}
