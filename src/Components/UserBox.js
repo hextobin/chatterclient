@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Input, Button, Grid } from 'semantic-ui-react'
+import { Input, Button } from 'semantic-ui-react'
 
 class UserBox extends Component {
 

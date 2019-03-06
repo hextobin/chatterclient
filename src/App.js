@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.min.css'
-import { Container, Grid } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import '../src/App.css'
 import io from 'socket.io-client'
-import MessageBox from './Components/MessageBox';
-import Messages from './Components/Messages'
-import UserBox from './Components/UserBox';
 import ControlColumn from './Components/ControlColumn'
 import MessageColumn from './Components/MessageColumn'
 
@@ -18,7 +15,7 @@ class App extends Component {
       userName: '',
     }
     
-    this.socket = io('localhost:3000')
+    this.socket = io('https://thawing-basin-98882.herokuapp.com/')
   }
 
   enableUser = () => {
