@@ -15,8 +15,8 @@ class App extends Component {
       userName: '',
     }
     
-    // this.socket = io('https://thawing-basin-98882.herokuapp.com/')
-    this.socket = io('localhost:3000')
+    this.socket = io('https://thawing-basin-98882.herokuapp.com/')
+    // this.socket = io('localhost:3000')
   }
 
   enableUser = () => {
