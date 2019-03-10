@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Input, Button } from 'semantic-ui-react'
+import moment from 'moment'
 
 class MessageBox extends Component {
 
@@ -9,12 +10,14 @@ class MessageBox extends Component {
 
   onMessageSubmit = (e) => {
     e.preventDefault()
-    this.props.socket.emit('chat message', this.state.message, this.props.userName)
+    const timeStamp = moment().format('h:mm:ss a')
+    this.props.socket.emit('chat message', this.state.message, this.props.userName, timeStamp)
     this.setState({ message: '' })
   }
 
   onChange = (e) => {
     this.setState({ message: e.target.value})
+    this.props.socket.emit('typing', this.props.userName)
   }
 
   render () { 

@@ -3,6 +3,7 @@ import { Card, Image } from 'semantic-ui-react'
 
 class UserList extends Component {
 
+
   userList = () => {
     return (
       this.props.users.map((user, index) => {
@@ -13,7 +14,7 @@ class UserList extends Component {
               <span id='user-list-name'>{user['name']}</span>
             </div>
             <Card.Header>
-              {/* put is typing here */}
+              {user['typing'] === true ? <div>is typing</div> : <div hidden={true}></div>}
             </Card.Header>
           </Card>
         )

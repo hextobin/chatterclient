@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Feed } from 'semantic-ui-react'
-import moment from 'moment'
 
 class Messages extends Component {
 
@@ -12,9 +11,9 @@ class Messages extends Component {
       inMessages: []
     }
 
-    this.props.socket.on('chat message', (message , userName) => {
+    this.props.socket.on('chat message', (message , userName, timeStamp) => {
       console.log(userName)
-      const newMessageObj = { message, userName }
+      const newMessageObj = { message, userName, timeStamp }
       this.setState({ inMessages: [...this.state.inMessages, newMessageObj] })
     })
   }
@@ -35,7 +34,7 @@ class Messages extends Component {
                       <Feed.Summary>
                         <Feed.User>{msgObj['userName']}</Feed.User>
                         {/* Put message time here */}
-                        <Feed.Date>{moment().format('h:mm:ss a')}</Feed.Date>
+                        <Feed.Date> {msgObj['timeStamp']}</Feed.Date>
                       </Feed.Summary>
                     <Feed.Extra>
                       {msgObj['message']}
