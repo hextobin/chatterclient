@@ -14,7 +14,7 @@ class UserList extends Component {
               <span id='user-list-name'>{user['name']}</span>
             </div>
             <Card.Header>
-              {user['typing'] === true ? <div>is typing</div> : <div hidden={true}></div>}
+              {user['typing'] === true ? <div className='typing'>is typing</div> : <div hidden={true}></div>}
             </Card.Header>
           </Card>
         )
