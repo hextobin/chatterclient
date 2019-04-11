@@ -1,18 +1,16 @@
 describe('Creates a User', () => {
 
   const userName = "AliceBobEve"
+  const typedValue = "BobWeHadABabyItsaBoy"
 
   before(() => {
     cy.visit('http://localhost:3000')
   })
 
-  it('Enters Username', () => {
+  it('Creates a User', () => {
     cy.get('#userbox')
       .type(userName)
       .should('have.value', userName)
-  })
-
-  it('Creates a User', () => {
     cy.server()
     cy.route('POST', '/socket.io/**').as('enterUser')
     cy.get('#userbox')
@@ -24,6 +22,22 @@ describe('Creates a User', () => {
         .should('have.text', userName)
       })
     })
+  })
+
+  it('Types', () => {
+    cy.get('input')
+      .type(typedValue)
+      .should('have.value', typedValue)
+      cy.focused().clear()
+  })
+
+  it('Displays typing', () => {
+    cy.get('input')
+      .type(typedValue)
+      .should('have.value', typedValue)
+    cy.get('.typing')
+      .should('have.text', 'is typing')
+    cy.focused().clear()
   })
 
 })
